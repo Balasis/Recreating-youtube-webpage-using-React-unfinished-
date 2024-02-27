@@ -1,0 +1,366 @@
+h1 {
+  font-size: initial;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: block;
+}
+
+.header {
+  margin-top: 1em;
+  border-bottom: 0.4em solid #1a1a19;
+  width: 100%;
+  height: 45em;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.header__Info {
+  flex-shrink: 0;
+  height: 2.5em;
+  z-index: 1;
+  position: relative;
+}
+.header__Info::before {
+  border-radius: 25px 25px 0px 0px;
+  display: block;
+  position: absolute;
+  background-image: url(src/images/backgrounds/infoBg.png);
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  z-index: -1;
+  content: "";
+}
+.header__Info__Logo {
+  z-index: 2;
+  height: 5em;
+  width: 5em;
+  left: 5em;
+  position: absolute;
+  background-image: url(src/images/logo/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.header__Info__Logo a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.header__Info__RightMenu {
+  align-items: center;
+  position: absolute;
+  right: 1em;
+  width: 50%;
+  height: 100%;
+  max-width: 30em;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+.header__Info__RightMenu__Search {
+  min-width: 5em;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 2em;
+}
+.header__Info__RightMenu__Search input {
+  width: 10em;
+  height: 100%;
+  border: 2px solid grey;
+  padding-left: 1.5em;
+  border-radius: 20px 20px 20px 20px;
+}
+.header__Info__RightMenu__Search input:focus {
+  outline: none;
+}
+.header__Info__RightMenu__Menu {
+  color: white;
+  min-width: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 1em;
+  font-size: 2em;
+  font-family: Comic Sans Ms;
+  text-align: center;
+}
+.header__Info__RightMenu__SmallScreenMenu {
+  display: none;
+}
+.header__Image {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-left: 6px solid #1a1a19;
+  border-right: 6px solid #1a1a19;
+}
+.header__Image img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header__Image__SmallMenu {
+  display: flex;
+}
+.header__Nav {
+  height: 0em;
+  width: 40em;
+  border-bottom: 40px solid #1a1a19;
+  border-left: 60px solid transparent;
+  border-right: 0px solid transparent;
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.header__Nav a {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  cursor: url(curs/Hover.cur), auto;
+}
+.header__Nav nav {
+  margin-top: -0.26em;
+  height: 3em;
+}
+.header__Nav nav ul {
+  height: 100%;
+  list-style-type: none;
+  display: flex;
+  font-family: Comic Sans Ms;
+  color: white;
+}
+.header__Nav nav ul li {
+  font-size: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header__Nav nav ul li:hover .bigger {
+  transform: scale(1.1);
+  cursor: url(curs/Hover.cur), auto;
+}
+.header__Nav__GalleryList__InnerList {
+  position: absolute;
+  margin-left: -0.7em;
+  z-index: 10;
+  flex-direction: column;
+  transition-timing-function: ease-in;
+  max-height: 0em;
+  display: flex;
+  overflow: hidden;
+  cursor: url(curs/Hover.cur), auto;
+}
+.header__Nav__GalleryList__InnerList div {
+  min-width: 10em;
+  background-color: #1a1a19;
+  color: white;
+  padding-left: 3em;
+  font-family: microsoft;
+  line-height: 2em;
+}
+.header__Nav__GalleryList__InnerList div:hover {
+  background-color: grey;
+}
+.header__Nav__GalleryList:hover .header__Nav__GalleryList__InnerList {
+  max-height: 300px;
+  transition: 2s;
+}
+.header__Nav__NotesList__InnerList {
+  position: absolute;
+  margin-left: -1.7em;
+  z-index: 10;
+  flex-direction: column;
+  transition-timing-function: ease-in;
+  max-height: 0em;
+  display: flex;
+  overflow: hidden;
+  cursor: url(curs/Hover.cur), auto;
+}
+.header__Nav__NotesList__InnerList div {
+  min-width: 11em;
+  background-color: #1a1a19;
+  color: white;
+  padding-left: 2.5em;
+  font-family: microsoft;
+  line-height: 2em;
+}
+.header__Nav__NotesList__InnerList div:hover {
+  background-color: grey;
+}
+.header__Nav__NotesList:hover .header__Nav__NotesList__InnerList {
+  max-height: 300px;
+  transition: 2s;
+}
+
+.HideSmallNavList {
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+}
+
+.AppearSmallNavList {
+  max-height: 30em;
+  -webkit-transition: all 0.5s ease-in-out;
+}
+
+/*Gallery List*/
+#Games__MainNav {
+  background-image: url("src/images/menuIcons/games.png");
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+}
+
+#Photos__MainNav {
+  background-image: url("src/images/menuIcons/photos.png");
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+}
+
+#Music__MainNav {
+  background-image: url("src/images/menuIcons/music.png");
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+}
+
+#Movies__MainNav {
+  background-image: url("src/images/menuIcons/movies.png");
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+}
+
+/**/
+/**/
+/*===========================================================================================================
+===========================================================================================================
+===========================================================================================================
+===========================================================================================================*/
+@media screen and (max-width: 768px) {
+  .header {
+    height: 30em;
+  }
+  .header__Info__RightMenu__Menu {
+    display: none;
+  }
+  .header__Info__RightMenu__SmallScreenMenu {
+    color: white;
+    width: 2em;
+    height: 2em;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 1em;
+    font-family: Comic Sans Ms;
+    border-radius: 360px;
+    background-color: transparent;
+    cursor: pointer;
+    background-image: url("src/images/MenuIcons/MenuIcon.png");
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 1s;
+  }
+  .header__Info__RightMenu__SmallScreenMenu:hover {
+    animation: inherit;
+    background-color: white;
+    background-image: url("src/images/MenuIcons/MenuIconHover.png");
+    transform: scale(1.1);
+  }
+  .header__Image__SmallMenu {
+    display: flex;
+    position: absolute;
+    z-index: 9998;
+    width: 100%;
+    height: 100%;
+    color: white;
+    flex-direction: column;
+  }
+  .header__Image__SmallMenu nav {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: black;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .header__Image__SmallMenu nav ul {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+  }
+  .header__Image__SmallMenu nav ul li {
+    overflow: hidden;
+    background-color: grey;
+  }
+  .header__Image__SmallMenu nav ul li a {
+    height: 3.41em;
+    font-size: 2em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    align-items: center;
+  }
+  .header__Image__SmallMenu nav ul li a p {
+    flex-basis: 160px;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  .header__Image__SmallMenu nav ul li a:hover {
+    background-color: orange;
+  }
+  .header__Image__SmallMenu nav::-webkite-scrollbar {
+    display: none;
+  }
+  .header__Nav {
+    display: none;
+  }
+}
+/*===========================================================================================================
+===========================================================================================================
+===========================================================================================================
+===========================================================================================================*/
+@media screen and (max-width: 500px) {
+  .header__Info__Logo {
+    width: 3em;
+    height: 3em;
+    left: 1em;
+  }
+  .header__Info__RightMenu {
+    width: 70%;
+  }
+  .header__Info__RightMenu__Search input {
+    margin-left: 1.7em;
+  }
+}
+html, body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: auto;
+  height: 100%;
+  overflow: hide;
+  background-color: inherit;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+}

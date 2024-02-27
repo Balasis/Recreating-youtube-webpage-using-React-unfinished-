@@ -1,0 +1,576 @@
+@use 'variables' as *;
+
+$h:".header";
+
+h1{font-size:initial;margin-top:0;margin-bottom:0;display:block;}
+
+
+#{$h}{
+
+margin-top:1em;
+border-bottom:0.4em solid $headerBorderColor;
+width:100%;
+height:$headerHeight;
+display:flex;
+flex-direction:column;
+
+position:relative;
+
+	&__Info {
+	flex-shrink:0;
+	height:$infoHeight;
+	z-index:1;
+	position:relative;
+					&::before{
+						border-radius:25px 25px 0px 0px;
+						display:block;
+						position:absolute;
+						background-image:url(src/images/backgrounds/infoBg.png);
+						height:100%;
+						width:100%;
+						opacity:0.5;
+						z-index:-1;
+						content:"";
+					}
+					&__Logo{
+					z-index:2;
+					height:5em;
+					width:5em;
+					left:5em;
+					position:absolute;
+					background-image:url(src/images/logo/logo.png);
+					background-size:contain;
+					background-repeat:no-repeat;
+					background-size:100% 100%;
+												a{
+													width:100%;
+													height:100%;
+													display:block;
+												}
+					}
+					&__RightMenu{
+					align-items:center;
+					position:absolute;
+					right:1em;
+					width:50%;				
+					height:100%;
+					max-width:30em;
+					display:flex;
+					flex-wrap:nowrap;
+					justify-content:flex-start;
+					
+
+											&__Search{
+												min-width:5em;
+												height:80%;
+												display:flex;
+												flex-direction:column;
+												justify-content:center;
+												text-align:center;
+												font-size:2em;
+												
+													input{
+													width:10em;
+													height:100%;
+													border:2px solid grey;
+													padding-left:1.5em;
+													border-radius:20px 20px 20px 20px;
+													}
+													input:focus{
+														outline:none;
+													}
+											}
+											&__Menu{
+												color:white;
+												
+												min-width:5em;
+												display:flex;
+												flex-direction:column;
+												justify-content:center;											
+												margin-left:auto;
+												margin-right:1em;
+												font-size:2em;
+												font-family:$navFont;
+												text-align:center;
+											}
+											&__SmallScreenMenu{
+												display:none;
+
+											}
+
+
+
+					}
+
+
+	}
+	&__Image {
+		height:100%;
+		position:relative;
+		overflow:hidden;
+		border-left:6px solid $headerBorderColor;
+		border-right:6px solid $headerBorderColor;
+			img{
+			display:block;
+			height:100%;
+			width:100%;
+			position:absolute;
+				top:50%;
+			left:50%;
+			 transform: translate(-50%, -50%);
+			}
+
+
+			&__SmallMenu{
+								
+				display:flex;
+			}
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+	&__Nav {
+   height: 0em;
+    width: 40em;
+    
+   	
+    border-bottom: 40px solid $headerBorderColor;
+    border-left: 60px solid transparent;
+    border-right: 0px solid transparent;
+	background-color:transparent;
+	position:absolute;
+	right:0;
+	bottom:0;
+			a{height:100%;width:100%;display:inline-block;cursor:url(curs/Hover.cur),auto;}
+
+			nav{
+
+				margin-top:-0.26em;
+				height:3em;
+
+				ul{
+					height:100%;
+					list-style-type:none;
+					display:flex;
+					font-family:$navFont;
+					color:white;
+
+						li{	
+
+							font-size:1.5em;
+							margin-left:auto;
+							margin-right:auto;
+
+						}
+						li:hover{
+
+							
+						}
+						li:hover .bigger{transform:scale(1.1);cursor:url(curs/Hover.cur),auto;}
+				}
+			}
+			&__GalleryList{
+
+
+									&__InnerList{
+										position:absolute;
+										margin-left:-0.7em;
+										z-index:10;
+										
+										flex-direction:column;										
+										
+										transition-timing-function: ease-in;
+										max-height:0em;
+										display:flex;
+										overflow:hidden;
+										cursor:url(curs/Hover.cur),auto;
+													div{
+														min-width:10em;
+														background-color:$headerBorderColor;
+														color:white;
+														padding-left:3em;
+														font-family:microsoft;
+														line-height:2em;
+															}
+													div:hover{
+
+														background-color:grey;
+													}
+												}
+						}
+			&__GalleryList:hover .header__Nav__GalleryList__InnerList{max-height:300px;transition:2s;}
+
+			&__NotesList{
+
+
+
+									&__InnerList{
+										position:absolute;
+										margin-left:-1.7em;
+										
+										z-index:10;
+										flex-direction:column;										
+										
+										transition-timing-function: ease-in;
+										
+										max-height:0em;
+										display:flex;
+										overflow:hidden;
+										cursor:url(curs/Hover.cur),auto;
+													div{
+														min-width:11em;
+														background-color:$headerBorderColor;
+														color:white;
+														padding-left:2.5em;
+														font-family:microsoft;
+														line-height:2em;
+
+															
+
+															}
+													div:hover{
+														background-color:grey;
+													}
+												}
+						}
+			&__NotesList:hover .header__Nav__NotesList__InnerList{max-height:300px;transition:2s;}
+
+
+
+
+
+
+
+
+	}
+
+
+
+
+}
+
+
+
+
+
+.HideSmallNavList{max-height:0;-webkit-transition: all 0.5s ease-in-out;}
+.AppearSmallNavList{max-height:30em;-webkit-transition: all 0.5s ease-in-out;}
+
+/*Gallery List*/
+#Games__MainNav{background-image:url("src/images/menuIcons/games.png");background-size:25px 25px;background-repeat:no-repeat;background-position:5% 50%;}
+#Photos__MainNav{background-image:url("src/images/menuIcons/photos.png");background-size:25px 25px;background-repeat:no-repeat;background-position:5% 50%;}
+#Music__MainNav{background-image:url("src/images/menuIcons/music.png");background-size:25px 25px;background-repeat:no-repeat;background-position:5% 50%;}
+#Movies__MainNav{background-image:url("src/images/menuIcons/movies.png");background-size:25px 25px;background-repeat:no-repeat;background-position:5% 50%;}
+/**/
+/**/
+
+
+
+/*===========================================================================================================
+===========================================================================================================
+===========================================================================================================
+===========================================================================================================*/
+
+
+@media screen and (max-width:$tablet){
+
+
+#{$h}{
+	height:30em;
+
+	&__Info {
+
+					&::before{
+
+
+					}
+
+					&__Logo{
+	
+
+					}
+					&__RightMenu{
+						
+		
+					
+
+											&__Search{
+											
+												
+													input{
+										
+													}
+													input:focus{
+														
+													}
+											}
+											&__Menu{
+											display:none;
+											}
+											&__SmallScreenMenu{
+												color:white;											
+												width:2em;
+												height:2em;
+												flex-shrink:0;
+												display:flex;
+												flex-direction:column;
+												justify-content:center;											
+												margin-left:auto;
+												margin-right:1em;												
+												font-family:$navFont;
+												border-radius:360px;
+												background-color:transparent;
+												cursor:pointer;
+												background-image:url("src/images/MenuIcons/MenuIcon.png");
+												background-size:80% 80%;
+												background-position:center;
+												background-repeat:no-repeat;
+												transition:1s;
+												
+
+											}
+										
+
+											&__SmallScreenMenu:hover{
+												animation:inherit;
+												background-color:white;
+												background-image:url("src/images/MenuIcons/MenuIconHover.png");
+												transform:scale(1.1);
+											}
+
+					}
+
+
+	}
+	&__Image {
+
+	img{
+
+	}
+	&__SmallMenu{
+		display:flex;
+		position:absolute;
+		z-index:9998;	
+		width:100%;
+		height:100%;
+		color:$navSmallMenuColor;
+		flex-direction:column;
+		
+		
+		nav{
+		width:100%;
+		height:100%;
+		overflow-y:auto;
+		background-color:black;
+		-ms-overflow-style:none;
+		scrollbar-width:none;
+				ul{
+
+					margin:0;
+					padding:0;
+					text-decoration:none;
+					list-style-type:none;
+
+								
+					li{	
+						
+						overflow:hidden;
+						background-color:grey;
+
+
+						a{	
+							height:3.41em;
+							font-size:2em;
+							width:100%;
+							display:flex;
+							
+							justify-content:center;
+							border-bottom:1px solid black;
+							
+							align-items:center;
+							p{
+								  flex-basis: 160px;
+ 									 flex-grow: 0;
+  								flex-shrink: 0;
+							}
+
+
+						}
+						a:hover{
+							background-color:orange;
+						}
+													
+			
+
+
+					}
+
+
+				}
+				
+
+		}
+		nav::-webkite-scrollbar{
+					display:none;
+				}
+
+
+	}
+
+
+
+	}
+
+
+
+
+
+
+
+	&__Nav {
+		display:none;
+
+
+			nav{
+				
+
+				ul{
+				
+
+						li{	
+
+						
+
+						}
+						li:hover{
+						
+						}
+				}
+			}
+			&__GalleryList{
+
+									&InnerList{
+
+													div{
+
+															}
+												}
+						}
+
+	}
+
+}
+
+
+
+
+}
+
+/*===========================================================================================================
+===========================================================================================================
+===========================================================================================================
+===========================================================================================================*/
+
+
+@media screen and (max-width:$phone){
+
+
+#{$h}{
+	
+
+	&__Info {
+
+					&::before{
+
+
+					}
+
+					&__Logo{
+						width:3em;
+						height:3em;
+						left:1em;
+					}
+					&__RightMenu{
+						width:70%;
+					
+					
+
+											&__Search{
+											
+												
+													input{
+													margin-left:1.7em;
+													}
+													input:focus{
+														
+													}
+											}
+											&__Menu{
+											
+											}
+											&__SmallScreenMenu{
+												
+											}
+					}
+
+
+	}
+	&__Image {
+
+		img{
+	
+		}	
+		&__SmallMenu{
+
+			}
+
+	}
+	&__Nav {
+
+
+
+			nav{
+				
+
+				ul{
+				
+
+						li{	
+
+						
+
+						}
+						li:hover{
+						
+						}
+				}
+			}
+			&__GalleryList{
+
+									&InnerList{
+
+													div{
+
+															}
+												}
+						}
+
+	}
+
+}
+
+
+
+
+}
+
+

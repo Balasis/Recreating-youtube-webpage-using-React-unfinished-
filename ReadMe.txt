@@ -1,0 +1,3 @@
+It doesnt include the node_modules folder..
+Just simple "npm install" to load them
+unfinished...
